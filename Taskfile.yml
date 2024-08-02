@@ -1,0 +1,95 @@
+version: '3'
+
+tasks:
+  verify-weekly-release:
+    cmds:
+      - task: release-ci-job
+      - task: datadog-download-monitor
+      - task: war-file-downloads
+      - task: war-file-mirrors
+      - task: debian-installer
+      - task: red-hat-installer
+      - task: msi-installer
+      - task: changelog-published
+      - task: changelog-jira-issues-updated
+      - task: github-release-documented
+      - task: upgrade-guide-needed
+      - task: docker-image-tag
+      - task: docker-image-changelog
+      - task: plugin-bill-of-materials
+      - task: acceptance-test-harness
+      - task: pipeline-steps-doc-generator
+      - task: pipeline-metadata-utilities
+
+  release-ci-job:
+    cmds:
+      - echo release-ci-job for {{.CLI_ARGS}}
+
+  datadog-download-monitor:
+    cmds:
+      - echo datadog-download-monitor for {{.CLI_ARGS}}
+
+  war-file-downloads:
+    cmds:
+      - echo war-file-downloads for {{.CLI_ARGS}}
+
+  war-file-mirrors:
+    cmds:
+      - echo war-file-mirrors for {{.CLI_ARGS}}
+  
+  debian-installer:
+    cmds:
+      - echo debian-installer for {{.CLI_ARGS}}
+
+  red-hat-installer:
+    cmds:
+      - echo red-hat-installer for {{.CLI_ARGS}}
+
+  msi-installer:
+    cmds:
+      - echo msi-installer for {{.CLI_ARGS}}
+
+  changelog-published:
+    cmds:
+      - echo changelog-published for {{.CLI_ARGS}}
+      - echo check https://www.jenkins.io/changelog/
+      - echo check https://www.jenkins.io/changelog/rss.xml
+
+  changelog-jira-issues-updated:
+    cmds:
+      - echo changelog-jira-issues-updated for {{.CLI_ARGS}}
+
+  github-release-documented:
+    cmds:
+      - echo github-release-documented for {{.CLI_ARGS}}
+      - echo check https://github.com/jenkinsci/jenkins/releases/tag/jenkins-2.470
+
+  upgrade-guide-needed:
+    cmds:
+      - echo upgrade-guide-needed for {{.CLI_ARGS}}
+
+  docker-image-tag:
+    cmds:
+      - echo docker-image-tag for {{.CLI_ARGS}}
+
+  docker-image-changelog:
+    cmds:
+      - echo docker-image-changelog for {{.CLI_ARGS}}
+      - echo check https://github.com/jenkinsci/docker/releases/tag/2.470
+
+  plugin-bill-of-materials:
+    cmds:
+      - echo plugin-bill-of-materials for {{.CLI_ARGS}}
+
+  acceptance-test-harness:
+    cmds:
+      - echo acceptance-test-harness for {{.CLI_ARGS}}
+
+  pipeline-steps-doc-generator:
+    cmds:
+      - echo pipeline-steps-doc-generator for {{.CLI_ARGS}}
+
+  pipeline-metadata-utilities:
+    cmds:
+      - echo pipeline-metadata-utilities for {{.CLI_ARGS}}
+  
